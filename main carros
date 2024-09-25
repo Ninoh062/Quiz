@@ -1,0 +1,36 @@
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.Stack;
+
+
+public class Main {
+    public static void main(String[] args) {
+        // Criando a lista de carros
+        ArrayList<Carros> listaDeCarros = new ArrayList<>();
+        listaDeCarros.add(new Carros(2020, "Corolla"));
+        listaDeCarros.add(new Carros(2021, "Jetta"));
+        listaDeCarros.add(new Carros(2022, "Civic"));
+
+        // Criando a fila e adicionando os carros da lista do último para o primeiro
+        Queue<Carros> filaDeCarros = new LinkedList<>();
+        for (int i = listaDeCarros.size() - 1; i >= 0; i--) {
+            filaDeCarros.add(listaDeCarros.get(i));
+        }
+
+        System.out.println(filaDeCarros);
+        System.out.println(filaDeCarros.peek());
+        // Criando a pilha a partir dos carros na fila
+        Stack<Carros> pilhaDeCarros = new Stack<>();
+        while (!filaDeCarros.isEmpty()) {
+            pilhaDeCarros.push(filaDeCarros.remove());
+        }
+        System.out.println(pilhaDeCarros);
+
+        System.out.println(pilhaDeCarros.peek());
+        // Exibindo os carros na pilha
+        while (!pilhaDeCarros.isEmpty()) {
+            System.out.println(pilhaDeCarros.pop());
+        }
+    }
+}
