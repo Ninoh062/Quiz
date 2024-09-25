@@ -1,0 +1,24 @@
+import com.sun.tools.javac.Main;
+
+public class Carros  {
+    int ano;
+    String modelo;
+
+    Carros(int ano, String modelo) {
+        this.ano = ano;
+        this.modelo = modelo;
+    }
+
+    public int getAno() {
+        return ano;
+    }
+    public String getModelo() {
+        return modelo;
+
+    }
+
+    @Override
+    public String toString() {
+        return "Carro{" + "ano=" + ano + ", modelo='" + modelo + '\'' + '}';
+    }
+}
